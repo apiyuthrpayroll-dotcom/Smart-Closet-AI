@@ -1,0 +1,6 @@
+{
+  "name": "ระบบสแกนตู้เสื้อผ้าแล้วจัดชุดที่ใช้ได้ทันที",
+  "description": "โครงการวิจัยระบบสแกนตู้เสื้อผ้าแล้วจัดชุดที่ใช้ได้ทันที (Smart Wardrobe Scanner & Instant Outfit Stylist) สาขาเทคโนโลยีธุรกิจดิจิทัล วิทยาลัยเทคโนโลยีหมู่บ้านครู",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

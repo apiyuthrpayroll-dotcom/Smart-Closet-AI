@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 15mm 12mm 15mm 12mm;
+  }
+
+  /* Force background colors, gradients, and borders in Chrome, Safari, Edge */
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    box-sizing: border-box !important;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #1e293b;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+  
+  /* Hide application navigation and UI toolbar */
+  nav, 
+  aside, 
+  .print\:hidden,
+  button,
+  [role="dialog"] {
+    display: none !important;
+  }
+
+  /* Keep article headers and content visible */
+  article {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  article header {
+    display: block !important;
+    padding-bottom: 1.25rem !important;
+    border-bottom: 1px solid #94a3b8 !important;
+  }
+
+  /* Academic Page Breaks */
+  .chapter-page-break {
+    page-break-before: always;
+    break-before: page;
+    padding-top: 1.25rem;
+  }
+
+  /* Figures & UI Mockup Cards in Print */
+  figure, .academic-figure {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 1.25rem 0 !important;
+    padding: 0.75rem !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 0.75rem !important;
+    background-color: #ffffff !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+  }
+
+  .academic-figure-graphic {
+    background-color: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    padding: 0.5rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 0.5rem !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  /* Keep dark mockup frames crisp and high-contrast on paper */
+  .academic-figure .bg-slate-950,
+  .academic-figure .bg-slate-900 {
+    background-color: #090d16 !important;
+    color: #f8fafc !important;
+    border: 1px solid #334155 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .academic-figure .bg-slate-950 *,
+  .academic-figure .bg-slate-900 * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Preserve specific mockup colors */
+  .academic-figure .text-white { color: #ffffff !important; }
+  .academic-figure .text-emerald-400 { color: #34d399 !important; }
+  .academic-figure .text-emerald-300 { color: #6ee7b7 !important; }
+  .academic-figure .text-amber-400 { color: #fbbf24 !important; }
+  .academic-figure .text-amber-300 { color: #fcd34d !important; }
+  .academic-figure .text-indigo-400 { color: #818cf8 !important; }
+  .academic-figure .text-indigo-300 { color: #a5b4fc !important; }
+  .academic-figure .text-sky-400 { color: #38bdf8 !important; }
+  .academic-figure .text-sky-300 { color: #7dd3fc !important; }
+
+  figcaption {
+    break-before: avoid !important;
+    page-break-before: avoid !important;
+  }
+
+  table {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+  th, td {
+    border-color: #cbd5e1 !important;
+  }
+}
