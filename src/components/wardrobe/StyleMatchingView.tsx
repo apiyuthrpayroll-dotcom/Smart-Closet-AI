@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Outfit, ClothingItem, OccasionType } from '../../types';
 import { FIGURES_META } from '../../data/mockData';
+import { ReportImage } from '../report/ReportImage';
 import { 
   Sparkles, 
   Heart, 
@@ -128,13 +129,14 @@ export const StyleMatchingView: React.FC<StyleMatchingViewProps> = ({
             </div>
 
             <div className="rounded-lg overflow-hidden border border-slate-200 aspect-4/3 relative">
-              <img
+              <ReportImage
                 src={FIGURES_META.fig3_5.path}
                 alt="ภาพประกอบที่ 3.5 ค้นหาสไตล์และเสนอแนะชุด"
+                figureNumber="ภาพประกอบ 3.5"
+                title="ค้นหาสไตล์และเสนอแนะชุด (Style Matching)"
                 className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/80 to-transparent p-2 text-white text-[11px]">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/80 to-transparent p-2 text-white text-[11px] pointer-events-none z-10">
                 ภาพประกอบที่ 3.5 ค้นหาสไตล์และเสนอแนะชุด
               </div>
             </div>
@@ -247,12 +249,15 @@ export const StyleMatchingView: React.FC<StyleMatchingViewProps> = ({
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   {/* Top */}
                   <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-100 flex flex-col items-center text-center space-y-1.5">
-                    <div className="w-16 h-16 rounded-lg overflow-hidden border border-slate-200">
+                    <div className="w-16 h-16 rounded-lg overflow-hidden border border-slate-200 bg-slate-100">
                       <img
                         src={outfit.topItem.image}
                         alt={outfit.topItem.name}
                         className="w-full h-full object-cover"
                         referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src = '/assets/aistudio/ui_scan.jpg';
+                        }}
                       />
                     </div>
                     <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">เสื้อ</div>
@@ -261,12 +266,15 @@ export const StyleMatchingView: React.FC<StyleMatchingViewProps> = ({
 
                   {/* Bottom */}
                   <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-100 flex flex-col items-center text-center space-y-1.5">
-                    <div className="w-16 h-16 rounded-lg overflow-hidden border border-slate-200">
+                    <div className="w-16 h-16 rounded-lg overflow-hidden border border-slate-200 bg-slate-100">
                       <img
                         src={outfit.bottomItem.image}
                         alt={outfit.bottomItem.name}
                         className="w-full h-full object-cover"
                         referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src = '/assets/aistudio/ui_classify.jpg';
+                        }}
                       />
                     </div>
                     <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">กางเกง/กระโปรง</div>
@@ -276,12 +284,15 @@ export const StyleMatchingView: React.FC<StyleMatchingViewProps> = ({
                   {/* Outerwear */}
                   {outfit.outerwearItem ? (
                     <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-100 flex flex-col items-center text-center space-y-1.5">
-                      <div className="w-16 h-16 rounded-lg overflow-hidden border border-slate-200">
+                      <div className="w-16 h-16 rounded-lg overflow-hidden border border-slate-200 bg-slate-100">
                         <img
                           src={outfit.outerwearItem.image}
                           alt={outfit.outerwearItem.name}
                           className="w-full h-full object-cover"
                           referrerPolicy="no-referrer"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).src = '/assets/aistudio/ui_analysis.jpg';
+                          }}
                         />
                       </div>
                       <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">เสื้อคลุม/สูท</div>
@@ -297,12 +308,15 @@ export const StyleMatchingView: React.FC<StyleMatchingViewProps> = ({
                   {/* Shoes */}
                   {outfit.shoesItem && (
                     <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-100 flex flex-col items-center text-center space-y-1.5">
-                      <div className="w-16 h-16 rounded-lg overflow-hidden border border-slate-200">
+                      <div className="w-16 h-16 rounded-lg overflow-hidden border border-slate-200 bg-slate-100">
                         <img
                           src={outfit.shoesItem.image}
                           alt={outfit.shoesItem.name}
                           className="w-full h-full object-cover"
                           referrerPolicy="no-referrer"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).src = '/assets/aistudio/ui_database.jpg';
+                          }}
                         />
                       </div>
                       <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">รองเท้า</div>

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ClothingItem, Outfit, NavTab } from '../../types';
 import { RESEARCH_METADATA, FIGURES_META } from '../../data/mockData';
+import { ReportImage } from '../report/ReportImage';
 import { 
   Sparkles, 
   Scan, 
@@ -223,19 +224,21 @@ export const WardrobeDashboardView: React.FC<WardrobeDashboardViewProps> = ({
             <div
               key={step.figureNum}
               onClick={() => onNavigateToTab(step.tab)}
-              className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md transition-all cursor-pointer group flex flex-col"
+              className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md transition-all cursor-pointer group flex flex-col hover:border-indigo-300"
             >
               <div className="aspect-16/10 relative overflow-hidden bg-slate-100">
-                <img
+                <ReportImage
                   src={step.image}
                   alt={step.title}
+                  figureNumber={`ภาพประกอบ ${step.figureNum}`}
+                  title={step.title}
+                  description={step.desc}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  referrerPolicy="no-referrer"
                 />
-                <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/70 backdrop-blur-xs text-white text-[10px] font-bold">
+                <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/70 backdrop-blur-xs text-white text-[10px] font-bold pointer-events-none z-10">
                   ภาพประกอบ {step.figureNum}
                 </div>
-                <div className="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-indigo-600 text-white text-[10px] font-bold shadow-xs">
+                <div className="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-indigo-600 text-white text-[10px] font-bold shadow-xs pointer-events-none z-10">
                   {step.step}
                 </div>
               </div>
@@ -289,18 +292,48 @@ export const WardrobeDashboardView: React.FC<WardrobeDashboardViewProps> = ({
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div className="bg-white p-3 rounded-xl border border-slate-200 text-center space-y-1">
-              <img src={featuredOutfit.topItem.image} alt="เสื้อ" className="w-14 h-14 object-cover rounded-lg mx-auto" />
+              <div className="w-14 h-14 mx-auto rounded-lg overflow-hidden bg-slate-100 border border-slate-200">
+                <img 
+                  src={featuredOutfit.topItem.image} 
+                  alt="เสื้อ" 
+                  className="w-full h-full object-cover" 
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = '/assets/aistudio/ui_scan.jpg';
+                  }}
+                />
+              </div>
               <div className="text-[10px] text-slate-400">เสื้อ</div>
               <div className="text-xs font-bold text-slate-800 truncate">{featuredOutfit.topItem.name}</div>
             </div>
             <div className="bg-white p-3 rounded-xl border border-slate-200 text-center space-y-1">
-              <img src={featuredOutfit.bottomItem.image} alt="ท่อนล่าง" className="w-14 h-14 object-cover rounded-lg mx-auto" />
+              <div className="w-14 h-14 mx-auto rounded-lg overflow-hidden bg-slate-100 border border-slate-200">
+                <img 
+                  src={featuredOutfit.bottomItem.image} 
+                  alt="ท่อนล่าง" 
+                  className="w-full h-full object-cover" 
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = '/assets/aistudio/ui_classify.jpg';
+                  }}
+                />
+              </div>
               <div className="text-[10px] text-slate-400">ท่อนล่าง</div>
               <div className="text-xs font-bold text-slate-800 truncate">{featuredOutfit.bottomItem.name}</div>
             </div>
             {featuredOutfit.shoesItem && (
               <div className="bg-white p-3 rounded-xl border border-slate-200 text-center space-y-1">
-                <img src={featuredOutfit.shoesItem.image} alt="รองเท้า" className="w-14 h-14 object-cover rounded-lg mx-auto" />
+                <div className="w-14 h-14 mx-auto rounded-lg overflow-hidden bg-slate-100 border border-slate-200">
+                  <img 
+                    src={featuredOutfit.shoesItem.image} 
+                    alt="รองเท้า" 
+                    className="w-full h-full object-cover" 
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = '/assets/aistudio/ui_database.jpg';
+                    }}
+                  />
+                </div>
                 <div className="text-[10px] text-slate-400">รองเท้า</div>
                 <div className="text-xs font-bold text-slate-800 truncate">{featuredOutfit.shoesItem.name}</div>
               </div>

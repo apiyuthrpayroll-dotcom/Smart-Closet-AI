@@ -1,6 +1,7 @@
 import React from 'react';
 import { ClothingItem } from '../../types';
 import { FIGURES_META } from '../../data/mockData';
+import { ReportImage } from '../report/ReportImage';
 import { 
   BarChart3, 
   PieChart as PieChartIcon, 
@@ -124,13 +125,14 @@ export const WardrobeAnalysisView: React.FC<WardrobeAnalysisViewProps> = ({
             </div>
 
             <div className="rounded-lg overflow-hidden border border-slate-200 aspect-4/3 relative">
-              <img
+              <ReportImage
                 src={FIGURES_META.fig3_4.path}
                 alt="ภาพประกอบที่ 3.4 สรุปและประมวลผลตู้เสื้อผ้า"
+                figureNumber="ภาพประกอบ 3.4"
+                title="สรุปและประมวลผลตู้เสื้อผ้า (Analysis & Verification)"
                 className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/80 to-transparent p-2 text-white text-[11px]">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/80 to-transparent p-2 text-white text-[11px] pointer-events-none z-10">
                 ภาพประกอบที่ 3.4 สรุปและประมวลผลตู้เสื้อผ้า
               </div>
             </div>

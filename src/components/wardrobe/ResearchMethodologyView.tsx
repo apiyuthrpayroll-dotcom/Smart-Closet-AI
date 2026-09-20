@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { RESEARCH_METADATA, SURVEY_QUESTIONS, INTERVIEW_RECORDS, FIGURES_META } from '../../data/mockData';
+import { ReportImage } from '../report/ReportImage';
 import { 
   Users, 
   FileText, 
@@ -399,16 +400,18 @@ export const ResearchMethodologyView: React.FC<ResearchMethodologyViewProps> = (
               {Object.entries(FIGURES_META).map(([key, fig]) => (
                 <div 
                   key={key}
-                  className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col"
+                  className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col hover:border-indigo-300"
                 >
                   <div className="aspect-4/3 overflow-hidden bg-slate-100 relative">
-                    <img
+                    <ReportImage
                       src={fig.path}
                       alt={fig.title}
+                      figureNumber={`ภาพประกอบที่ ${fig.number}`}
+                      title={fig.title}
+                      description={fig.description}
                       className="w-full h-full object-cover"
-                      referrerPolicy="no-referrer"
                     />
-                    <div className="absolute top-2 left-2 px-2 py-0.5 bg-black/70 backdrop-blur-xs text-white text-[10px] font-bold rounded">
+                    <div className="absolute top-2 left-2 px-2 py-0.5 bg-black/70 backdrop-blur-xs text-white text-[10px] font-bold rounded pointer-events-none z-10">
                       ภาพประกอบที่ {fig.number}
                     </div>
                   </div>

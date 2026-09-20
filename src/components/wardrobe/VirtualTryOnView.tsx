@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Outfit, ClothingItem } from '../../types';
 import { FIGURES_META } from '../../data/mockData';
+import { ReportImage } from '../report/ReportImage';
 import { 
   Sparkles, 
   Heart, 
@@ -92,13 +93,14 @@ export const VirtualTryOnView: React.FC<VirtualTryOnViewProps> = ({
             </div>
 
             <div className="rounded-lg overflow-hidden border border-slate-200 aspect-4/3 relative">
-              <img
+              <ReportImage
                 src={FIGURES_META.fig3_6.path}
                 alt="ภาพประกอบที่ 3.6 ลองชุดเสมือนจริงและพร้อมใช้งาน"
+                figureNumber="ภาพประกอบ 3.6"
+                title="ลองชุดเสมือนจริงและพร้อมใช้งาน (Virtual Try-On)"
                 className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/80 to-transparent p-2 text-white text-[11px]">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/80 to-transparent p-2 text-white text-[11px] pointer-events-none z-10">
                 ภาพประกอบที่ 3.6 ลองชุดเสมือนจริงและพร้อมใช้งาน
               </div>
             </div>
@@ -269,12 +271,17 @@ export const VirtualTryOnView: React.FC<VirtualTryOnViewProps> = ({
                 {/* Garments breakdown chips */}
                 <div className="space-y-2">
                   <div className="flex items-center gap-3 p-2.5 rounded-xl border border-slate-200 bg-slate-50/70">
-                    <img 
-                      src={currentOutfit.topItem.image} 
-                      alt={currentOutfit.topItem.name}
-                      className="w-12 h-12 rounded-lg object-cover border border-slate-200 shrink-0" 
-                      referrerPolicy="no-referrer"
-                    />
+                    <div className="w-12 h-12 rounded-lg overflow-hidden border border-slate-200 bg-slate-100 shrink-0">
+                      <img 
+                        src={currentOutfit.topItem.image} 
+                        alt={currentOutfit.topItem.name}
+                        className="w-full h-full object-cover" 
+                        referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src = '/assets/aistudio/ui_scan.jpg';
+                        }}
+                      />
+                    </div>
                     <div className="flex-1 min-w-0">
                       <div className="text-[10px] font-semibold text-slate-400">เสื้อท่อนบน</div>
                       <div className="font-bold text-xs text-slate-900 truncate">{currentOutfit.topItem.name}</div>
@@ -283,12 +290,17 @@ export const VirtualTryOnView: React.FC<VirtualTryOnViewProps> = ({
                   </div>
 
                   <div className="flex items-center gap-3 p-2.5 rounded-xl border border-slate-200 bg-slate-50/70">
-                    <img 
-                      src={currentOutfit.bottomItem.image} 
-                      alt={currentOutfit.bottomItem.name}
-                      className="w-12 h-12 rounded-lg object-cover border border-slate-200 shrink-0" 
-                      referrerPolicy="no-referrer"
-                    />
+                    <div className="w-12 h-12 rounded-lg overflow-hidden border border-slate-200 bg-slate-100 shrink-0">
+                      <img 
+                        src={currentOutfit.bottomItem.image} 
+                        alt={currentOutfit.bottomItem.name}
+                        className="w-full h-full object-cover" 
+                        referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src = '/assets/aistudio/ui_classify.jpg';
+                        }}
+                      />
+                    </div>
                     <div className="flex-1 min-w-0">
                       <div className="text-[10px] font-semibold text-slate-400">ท่อนล่าง</div>
                       <div className="font-bold text-xs text-slate-900 truncate">{currentOutfit.bottomItem.name}</div>
@@ -298,12 +310,17 @@ export const VirtualTryOnView: React.FC<VirtualTryOnViewProps> = ({
 
                   {currentOutfit.outerwearItem && (
                     <div className="flex items-center gap-3 p-2.5 rounded-xl border border-slate-200 bg-slate-50/70">
-                      <img 
-                        src={currentOutfit.outerwearItem.image} 
-                        alt={currentOutfit.outerwearItem.name}
-                        className="w-12 h-12 rounded-lg object-cover border border-slate-200 shrink-0" 
-                        referrerPolicy="no-referrer"
-                      />
+                      <div className="w-12 h-12 rounded-lg overflow-hidden border border-slate-200 bg-slate-100 shrink-0">
+                        <img 
+                          src={currentOutfit.outerwearItem.image} 
+                          alt={currentOutfit.outerwearItem.name}
+                          className="w-full h-full object-cover" 
+                          referrerPolicy="no-referrer"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).src = '/assets/aistudio/ui_analysis.jpg';
+                          }}
+                        />
+                      </div>
                       <div className="flex-1 min-w-0">
                         <div className="text-[10px] font-semibold text-slate-400">เสื้อคลุมทับ</div>
                         <div className="font-bold text-xs text-slate-900 truncate">{currentOutfit.outerwearItem.name}</div>
@@ -314,12 +331,17 @@ export const VirtualTryOnView: React.FC<VirtualTryOnViewProps> = ({
 
                   {currentOutfit.shoesItem && (
                     <div className="flex items-center gap-3 p-2.5 rounded-xl border border-slate-200 bg-slate-50/70">
-                      <img 
-                        src={currentOutfit.shoesItem.image} 
-                        alt={currentOutfit.shoesItem.name}
-                        className="w-12 h-12 rounded-lg object-cover border border-slate-200 shrink-0" 
-                        referrerPolicy="no-referrer"
-                      />
+                      <div className="w-12 h-12 rounded-lg overflow-hidden border border-slate-200 bg-slate-100 shrink-0">
+                        <img 
+                          src={currentOutfit.shoesItem.image} 
+                          alt={currentOutfit.shoesItem.name}
+                          className="w-full h-full object-cover" 
+                          referrerPolicy="no-referrer"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).src = '/assets/aistudio/ui_database.jpg';
+                          }}
+                        />
+                      </div>
                       <div className="flex-1 min-w-0">
                         <div className="text-[10px] font-semibold text-slate-400">รองเท้า</div>
                         <div className="font-bold text-xs text-slate-900 truncate">{currentOutfit.shoesItem.name}</div>

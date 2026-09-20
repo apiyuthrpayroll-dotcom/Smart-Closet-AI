@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ClothingItem, ClothingCategory, OccasionType } from '../../types';
 import { FIGURES_META } from '../../data/mockData';
+import { ReportImage } from '../report/ReportImage';
 import { 
   FolderPlus, 
   Search, 
@@ -141,13 +142,14 @@ export const DigitalWardrobeView: React.FC<DigitalWardrobeViewProps> = ({
             </div>
 
             <div className="rounded-lg overflow-hidden border border-slate-200 aspect-4/3 relative">
-              <img
+              <ReportImage
                 src={FIGURES_META.fig3_3.path}
                 alt="ภาพประกอบที่ 3.3 สร้างคลังเก็บข้อมูลส่วนตัว"
+                figureNumber="ภาพประกอบ 3.3"
+                title="สร้างคลังเก็บข้อมูลส่วนตัว (Digital Wardrobe Database)"
                 className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/80 to-transparent p-2 text-white text-[11px]">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/80 to-transparent p-2 text-white text-[11px] pointer-events-none z-10">
                 ภาพประกอบที่ 3.3 คลังเก็บข้อมูลส่วนตัว
               </div>
             </div>
@@ -246,6 +248,9 @@ export const DigitalWardrobeView: React.FC<DigitalWardrobeViewProps> = ({
                     alt={item.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = '/assets/aistudio/ui_scan.jpg';
+                    }}
                   />
                   <button
                     onClick={() => onToggleFavorite(item.id)}

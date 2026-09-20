@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ClothingItem, ClothingCategory } from '../../types';
 import { FIGURES_META } from '../../data/mockData';
+import { ReportImage } from '../report/ReportImage';
 import { 
   Sparkles, 
   CheckCircle2, 
@@ -115,13 +116,14 @@ export const AutoClassifyView: React.FC<AutoClassifyViewProps> = ({
             </div>
 
             <div className="rounded-lg overflow-hidden border border-slate-200 aspect-4/3 relative">
-              <img
+              <ReportImage
                 src={FIGURES_META.fig3_2.path}
                 alt="ภาพประกอบที่ 3.2 จัดหมวดหมู่อัตโนมัติ"
+                figureNumber="ภาพประกอบ 3.2"
+                title="จัดหมวดหมู่อัตโนมัติ (Auto Classification)"
                 className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/80 to-transparent p-2 text-white text-[11px]">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/80 to-transparent p-2 text-white text-[11px] pointer-events-none z-10">
                 ภาพประกอบที่ 3.2 จัดหมวดหมู่อัตโนมัติ (Auto Classification)
               </div>
             </div>
@@ -223,12 +225,17 @@ export const AutoClassifyView: React.FC<AutoClassifyViewProps> = ({
                   }`}
                 >
                   <div className="flex items-start gap-3">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-20 h-20 rounded-lg object-cover border border-slate-200 shrink-0"
-                      referrerPolicy="no-referrer"
-                    />
+                    <div className="w-20 h-20 rounded-lg overflow-hidden border border-slate-200 shrink-0 bg-slate-100">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-full h-full object-cover"
+                        referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src = '/assets/aistudio/ui_scan.jpg';
+                        }}
+                      />
+                    </div>
 
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between gap-1">

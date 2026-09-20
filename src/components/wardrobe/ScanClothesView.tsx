@@ -179,6 +179,12 @@ export const ScanClothesView: React.FC<ScanClothesViewProps> = ({
               alt="Scan Clothes Wardrobe"
               className={`w-full h-full object-cover transition-opacity duration-500 ${isScanning ? 'brightness-90 contrast-110' : 'brightness-95'}`}
               referrerPolicy="no-referrer"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                if (!target.src.includes('/assets/aistudio/ui_scan.jpg')) {
+                  target.src = '/assets/aistudio/ui_scan.jpg';
+                }
+              }}
             />
 
             {/* Dark overlay with grid lines during scan */}
@@ -328,12 +334,17 @@ export const ScanClothesView: React.FC<ScanClothesViewProps> = ({
                       : 'border-slate-200 hover:border-slate-300 bg-white'
                   }`}
                 >
-                  <img
-                    src={preset.image}
-                    alt={preset.title}
-                    className="w-14 h-14 rounded-lg object-cover border border-slate-200 shrink-0"
-                    referrerPolicy="no-referrer"
-                  />
+                  <div className="w-14 h-14 rounded-lg overflow-hidden border border-slate-200 shrink-0 bg-slate-100">
+                    <img
+                      src={preset.image}
+                      alt={preset.title}
+                      className="w-full h-full object-cover"
+                      referrerPolicy="no-referrer"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = '/assets/aistudio/ui_scan.jpg';
+                      }}
+                    />
+                  </div>
                   <div className="flex-1 min-w-0">
                     <div className="font-bold text-xs text-slate-900 line-clamp-1">{preset.title}</div>
                     <div className="text-[11px] text-slate-500 mt-0.5 line-clamp-2 leading-relaxed">{preset.desc}</div>
