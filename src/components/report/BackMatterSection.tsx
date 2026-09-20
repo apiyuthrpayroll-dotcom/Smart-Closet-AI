@@ -4,6 +4,7 @@ import {
   RESEARCH_APPENDICES, 
   REPORT_METADATA 
 } from '../../data/reportData';
+import { ReportImage } from './ReportImage';
 import { 
   BookOpen, 
   FileText, 
@@ -329,13 +330,14 @@ export const BackMatterSection: React.FC = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-serif">
               <figure data-academic-figure data-figure-number="ภาพที่ จ.1" data-figure-title="การทดสอบการใช้งานระบบสแกนตู้เสื้อผ้ากับกลุ่มตัวอย่างนักเรียน ปวช. 3 ในห้องเรียน" data-figure-desc="นักเรียนระดับ ปวช. 3 แผนกวิชาเทคโนโลยีธุรกิจดิจิทัล วิทยาลัยเทคโนโลยีหมู่บ้านครู ทดลองใช้แอปพลิเคชันบนสมาร์ตโฟนเพื่อจับคู่ชุดและประเมินผลความพึงพอใจ" className="p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
-                <div className="rounded-lg overflow-hidden border border-slate-200 shadow-xs">
-                  <img
-                    src="/images/students_field_test.jpg"
-                    alt="การทดสอบระบบกับกลุ่มตัวอย่างนักเรียน ปวช. 3"
-                    className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
+                <ReportImage
+                  src="/assets/aistudio/students_field_test.jpg"
+                  alt="การทดสอบระบบกับกลุ่มตัวอย่างนักเรียน ปวช. 3"
+                  figureNumber="ภาพที่ จ.1"
+                  title="การทดสอบระบบกับกลุ่มตัวอย่างนักเรียน ปวช. 3 ในห้องปฏิบัติการ"
+                  description="นักเรียนระดับ ปวช. 3 แผนกวิชาเทคโนโลยีธุรกิจดิจิทัล วิทยาลัยเทคโนโลยีหมู่บ้านครู (N = 30) ร่วมทดลองใช้งานและตอบแบบสอบถาม"
+                  className="w-full h-48 object-cover rounded-lg"
+                />
                 <figcaption className="space-y-1">
                   <div className="font-bold text-slate-800 text-sm">ภาพที่ จ.1: การทดสอบระบบกับกลุ่มตัวอย่างนักเรียน ปวช. 3 ในห้องปฏิบัติการ</div>
                   <p className="text-slate-600">นักเรียนระดับ ปวช. 3 แผนกวิชาเทคโนโลยีธุรกิจดิจิทัล วิทยาลัยเทคโนโลยีหมู่บ้านครู (N = 30) ร่วมทดลองใช้งานและตอบแบบสอบถาม</p>
@@ -343,13 +345,14 @@ export const BackMatterSection: React.FC = () => {
               </figure>
 
               <figure data-academic-figure data-figure-number="ภาพที่ จ.2" data-figure-title="การทดสอบฟังก์ชันสแกนตู้เสื้อผ้าจริงและการจัดเก็บคลังดิจิทัล" data-figure-desc="ภาพจำลองกระบวนการสแกนเสื้อผ้าในตู้จริง ณ หอพัก/ที่พักอาศัยของนักเรียน เพื่อจัดเก็บเข้าสู่ระบบฐานข้อมูล IndexedDB" className="p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
-                <div className="rounded-lg overflow-hidden border border-slate-200 shadow-xs">
-                  <img
-                    src="/images/wardrobe_scan_real.jpg"
-                    alt="การทดสอบฟังก์ชันสแกนตู้เสื้อผ้าจริง"
-                    className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
+                <ReportImage
+                  src="/assets/aistudio/wardrobe_scan_real.jpg"
+                  alt="การทดสอบฟังก์ชันสแกนตู้เสื้อผ้าจริง"
+                  figureNumber="ภาพที่ จ.2"
+                  title="การทดสอบฟังก์ชันสแกนตู้เสื้อผ้าจริง (Field Trial at Wardrobe)"
+                  description="นักเรียนกลุ่มตัวอย่างทดสอบถ่ายภาพเสื้อผ้าในตู้จริง ตรวจสอบการตัดฉากหลัง และการบันทึกสถานะความสะอาดพร้อมใส่"
+                  className="w-full h-48 object-cover rounded-lg"
+                />
                 <figcaption className="space-y-1">
                   <div className="font-bold text-slate-800 text-sm">ภาพที่ จ.2: การทดสอบฟังก์ชันสแกนตู้เสื้อผ้าจริง (Field Trial at Wardrobe)</div>
                   <p className="text-slate-600">นักเรียนกลุ่มตัวอย่างทดสอบถ่ายภาพเสื้อผ้าในตู้จริง ตรวจสอบการตัดฉากหลัง และการบันทึกสถานะความสะอาดพร้อมใส่</p>

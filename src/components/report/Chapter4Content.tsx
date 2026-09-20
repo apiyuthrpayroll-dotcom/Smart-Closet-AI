@@ -12,6 +12,7 @@ import {
   Check
 } from 'lucide-react';
 import { AcademicFigure } from './ReportFigures';
+import { ReportImage } from './ReportImage';
 
 export const Chapter4Content: React.FC = () => {
   return (
@@ -127,9 +128,12 @@ export const Chapter4Content: React.FC = () => {
             description="แสดงหน้าจอขณะเปิดกล้องสมาร์ตโฟนสแกนชุดเสื้อผ้า ระบบทำการตัดฉากหลังอัตโนมัติ ตรวจจับเฉดสีหลัก และกำหนดแท็กหมวดหมู่เสื้อผ้าอย่างแม่นยำ"
           >
             <div className="w-full max-w-2xl flex flex-col items-center justify-center p-2">
-              <img
-                src="/images/ui_scan.jpg"
+              <ReportImage
+                src="/assets/aistudio/ui_scan.jpg"
                 alt="หน้าจอระบบจริง: การสแกนเสื้อผ้าและจำแนกหมวดหมู่"
+                figureNumber="รูปที่ 4.1"
+                title="ภาพหน้าจอระบบจริง: กระบวนการสแกนเสื้อผ้าและการจำแนกหมวดหมู่อัตโนมัติ (Modules 1-2)"
+                description="แสดงหน้าจอขณะเปิดกล้องสมาร์ตโฟนสแกนชุดเสื้อผ้า ระบบทำการตัดฉากหลังอัตโนมัติ ตรวจจับเฉดสีหลัก และกำหนดแท็กหมวดหมู่เสื้อผ้าอย่างแม่นยำ"
                 className="rounded-xl shadow-md max-h-96 w-full object-cover border border-slate-200"
               />
               <div className="mt-2 text-center text-xs text-slate-500 font-serif">
@@ -147,9 +151,12 @@ export const Chapter4Content: React.FC = () => {
             description="แสดงหน้าจอคลังตู้เสื้อผ้าดิจิทัลที่บันทึกข้อมูลเสื้อผ้าแยกตามหมวดหมู่ พร้อมฟังก์ชันจับคู่สไตล์ตามทฤษฎีสี 60-30-10 ที่ถูกต้องตามระเบียบวิทยาลัยเทคโนโลยีหมู่บ้านครู"
           >
             <div className="w-full max-w-2xl flex flex-col items-center justify-center p-2">
-              <img
-                src="/images/ui_style_match.jpg"
+              <ReportImage
+                src="/assets/aistudio/ui_style_match.jpg"
                 alt="หน้าจอระบบจริง: คลังตู้เสื้อผ้าดิจิทัลและจับคู่สไตล์"
+                figureNumber="รูปที่ 4.2"
+                title="ภาพหน้าจอระบบจริง: คลังตู้เสื้อผ้าดิจิทัลและผลการจับคู่ชุดสไตล์นักเรียน ปวช. (Modules 3-5)"
+                description="แสดงหน้าจอคลังตู้เสื้อผ้าดิจิทัลที่บันทึกข้อมูลเสื้อผ้าแยกตามหมวดหมู่ พร้อมฟังก์ชันจับคู่สไตล์ตามทฤษฎีสี 60-30-10 ที่ถูกต้องตามระเบียบวิทยาลัยเทคโนโลยีหมู่บ้านครู"
                 className="rounded-xl shadow-md max-h-96 w-full object-cover border border-slate-200"
               />
               <div className="mt-2 text-center text-xs text-slate-500 font-serif">
@@ -167,9 +174,12 @@ export const Chapter4Content: React.FC = () => {
             description="แสดงผลการเรนเดอร์ชุดเสื้อผ้าที่แมตช์ลงบนหุ่นจำลองเสมือนจริง 3 มิติ พร้อมตราสัญลักษณ์ College Dress Code Approved และคะแนนความมั่นใจ 98%"
           >
             <div className="w-full max-w-2xl flex flex-col items-center justify-center p-2">
-              <img
-                src="/images/virtual_tryon_preview.jpg"
+              <ReportImage
+                src="/assets/aistudio/virtual_tryon_preview.jpg"
                 alt="หน้าจอผลการลองชุดเสมือนจริง Virtual Try-On"
+                figureNumber="รูปที่ 4.3"
+                title="ภาพหน้าจอผลการลองชุดเสมือนจริง (Virtual Try-On Output) และการตรวจสอบระเบียบสถานศึกษา (Module 6)"
+                description="แสดงผลการเรนเดอร์ชุดเสื้อผ้าที่แมตช์ลงบนหุ่นจำลองเสมือนจริง 3 มิติ พร้อมตราสัญลักษณ์ College Dress Code Approved และคะแนนความมั่นใจ 98%"
                 className="rounded-xl shadow-md max-h-96 w-full object-cover border border-slate-200"
               />
               <div className="mt-2 text-center text-xs text-slate-500 font-serif">

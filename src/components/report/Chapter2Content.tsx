@@ -14,6 +14,7 @@ import {
   Table as TableIcon
 } from 'lucide-react';
 import { AcademicFigure } from './ReportFigures';
+import { ReportImage } from './ReportImage';
 
 export const Chapter2Content: React.FC = () => {
   return (
@@ -123,9 +124,12 @@ export const Chapter2Content: React.FC = () => {
             description="การแบ่งสัดส่วนสีหลัก (60%) สีรอง (30%) และสีเน้น (10%) เพื่อสร้างความสมดุลและความน่าเชื่อถือในบุคลิกภาพนักเรียน ปวช. สาขาเทคโนโลยีธุรกิจดิจิทัล"
           >
             <div className="w-full max-w-3xl flex flex-col items-center gap-3 py-2">
-              <img
-                src="/images/outfit_student_match.jpg"
+              <ReportImage
+                src="/assets/aistudio/outfit_student_match.jpg"
                 alt="การจัดวางชุดนักเรียนแบบ Flat-lay ตามกฎ 60-30-10"
+                figureNumber="รูปที่ 2.2"
+                title="แผนภาพทฤษฎีการจับคู่สีและความกลมกลืนตามสัดส่วน 60-30-10 ในแฟชั่นเครื่องแต่งกาย พร้อมตัวอย่างการจัดวางชุดจริง"
+                description="การแบ่งสัดส่วนสีหลัก (60%) สีรอง (30%) และสีเน้น (10%) เพื่อสร้างความสมดุลและความน่าเชื่อถือในบุคลิกภาพนักเรียน ปวช. สาขาเทคโนโลยีธุรกิจดิจิทัล"
                 className="rounded-xl shadow-md w-full max-h-96 object-cover border border-slate-200"
               />
               <div className="w-full grid grid-cols-3 gap-3 text-center">

@@ -19,37 +19,37 @@ export const FIGURES_META = {
   fig3_1: {
     number: '3.1',
     title: 'สแกนเสื้อผ้า (Scan Clothes)',
-    path: '/src/assets/images/wardrobe_scan_1789549386160.jpg',
+    path: '/assets/aistudio/wardrobe_scan_1789549386160.jpg',
     description: 'ผู้ใช้งานเปิดระบบและใช้กล้องสมาร์ทโฟนหรืออัปโหลดภาพตู้เสื้อผ้า ระบบแสดง Bounding Box และลำแสงเลเซอร์ตรวจจับเสื้อผ้า'
   },
   fig3_2: {
     number: '3.2',
     title: 'จัดหมวดหมู่อัตโนมัติ (Auto Classification)',
-    path: '/src/assets/images/wardrobe_classify_1789549400994.jpg',
+    path: '/assets/aistudio/wardrobe_classify_1789549400994.jpg',
     description: 'ระบบ AI ประมวลผลแยกแยะและจัดหมวดหมู่เสื้อผ้าเป็นเสื้อ กางเกง กระโปรง เดรส เสื้อคลุม พร้อมสกัดโทนสีและเนื้อผ้า'
   },
   fig3_3: {
     number: '3.3',
     title: 'สร้างคลังเก็บข้อมูลส่วนตัว (Digital Wardrobe Database)',
-    path: '/src/assets/images/wardrobe_database_1789549414303.jpg',
+    path: '/assets/aistudio/wardrobe_database_1789549414303.jpg',
     description: 'จัดเก็บเสื้อผ้าที่สแกนแล้วลงในคลังตู้เสื้อผ้าดิจิทัลส่วนตัว สามารถค้นหา คัดกรอง และดูสถิติตู้เสื้อผ้าได้ทุกที่ทุกเวลา'
   },
   fig3_4: {
     number: '3.4',
     title: 'สรุปและประมวลผลตู้เสื้อผ้า (Analysis & Verification)',
-    path: '/src/assets/images/wardrobe_analysis_1789549449414.jpg',
+    path: '/assets/aistudio/wardrobe_analysis_1789549449414.jpg',
     description: 'ระบบวิเคราะห์คลังเสื้อผ้าเสร็จสมบูรณ์ แสดงสัดส่วนเสื้อต่อกางเกง แผนภูมิวงล้อสี และประเมินความพร้อมในการจัดชุด'
   },
   fig3_5: {
     number: '3.5',
     title: 'ค้นหาสไตล์และเสนอแนะชุด (Style Matching & Outfit Recommendation)',
-    path: '/src/assets/images/style_matching_1789549427116.jpg',
+    path: '/assets/aistudio/style_matching_1789549427116.jpg',
     description: 'ระบบผสมผสานเสื้อผ้าตามโอกาส (ไปเรียน ปวช., พรีเซนต์งาน, ลำลอง) คำนวณคะแนนความเข้ากันได้ พร้อมปุ่มลองชุดเสมือนจริงและบันทึกชุดโปรด'
   },
   fig3_6: {
     number: '3.6',
     title: 'ลองชุดเสมือนจริงและพร้อมใช้งาน (Virtual Try-On & Ready to Wear)',
-    path: '/src/assets/images/virtual_tryon_1789549461734.jpg',
+    path: '/assets/aistudio/virtual_tryon_1789549461734.jpg',
     description: 'จำลองการสวมใส่ชุดบนหุ่นโมเดลเสมือนจริงแบบเรียลไทม์ ผู้ใช้งานเห็นภาพตนเองก่อนแต่งตัวจริง พร้อมหยิบสวมใส่ได้ทันที'
   }
 };

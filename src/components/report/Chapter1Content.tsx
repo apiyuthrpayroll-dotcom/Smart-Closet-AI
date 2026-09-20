@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { REPORT_METADATA } from '../../data/reportData';
 import { AcademicFigure } from './ReportFigures';
+import { ReportImage } from './ReportImage';
 
 export const Chapter1Content: React.FC = () => {
   return (
@@ -100,11 +101,14 @@ export const Chapter1Content: React.FC = () => {
             title="บริบทปัญหาความสูญเสียเวลาและภาพการสแกนตู้เสื้อผ้าจริงด้วยสมาร์ตโฟนเพื่อสร้างคลังดิจิทัล"
             description="ภาพการใช้งานกล้องสมาร์ตโฟนสแกนตู้เสื้อผ้าจริง พร้อมการตรวจจับเฉดสีและจำแนกประเภทเสื้อผ้าอัตโนมัติ เพื่อแก้ไขปัญหา Decision Fatigue ในหมู่นักเรียน"
           >
-            <div className="w-full flex flex-col items-center justify-center p-2">
-              <img
-                src="/images/wardrobe_scan_real.jpg"
+            <div className="w-full max-w-2xl flex flex-col items-center justify-center p-2">
+              <ReportImage
+                src="/assets/aistudio/wardrobe_scan_real.jpg"
                 alt="การสแกนตู้เสื้อผ้าจริงด้วยสมาร์ตโฟน"
-                className="rounded-xl shadow-md max-h-96 w-full max-w-2xl object-cover border border-slate-200"
+                figureNumber="รูปที่ 1.1"
+                title="บริบทปัญหาความสูญเสียเวลาและภาพการสแกนตู้เสื้อผ้าจริงด้วยสมาร์ตโฟนเพื่อสร้างคลังดิจิทัล"
+                description="ภาพการใช้งานกล้องสมาร์ตโฟนสแกนตู้เสื้อผ้าจริง พร้อมการตรวจจับเฉดสีและจำแนกประเภทเสื้อผ้าอัตโนมัติ เพื่อแก้ไขปัญหา Decision Fatigue ในหมู่นักเรียน"
+                className="rounded-xl shadow-md max-h-96 w-full object-cover border border-slate-200"
               />
               <div className="mt-2 text-center text-xs text-slate-500 font-serif">
                 ภาพถ่ายจำลองการใช้งานระบบสแกนตู้เสื้อผ้าจริง (Smart Wardrobe Scanner Mobile App) ณ ที่พักอาศัยของนักเรียน
